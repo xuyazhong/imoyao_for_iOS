@@ -1,13 +1,5 @@
-use_frameworks!
-
-platform :ios, '8.0'
+platform :ios, '10.0'
 
 target 'imoyao_Example' do
   pod 'imoyao', :path => '../'
-
-  target 'imoyao_Tests' do
-    inherit! :search_paths
-
-    pod 'FBSnapshotTestCase'
-  end
 end
