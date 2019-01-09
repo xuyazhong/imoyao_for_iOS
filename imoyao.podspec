@@ -17,8 +17,10 @@ imoyao库.
 
   # s.source_files  = "Classes", "Classes/*.{h,m}"
   s.source_files = 'imoyao/Classes/**/*'
+  s.vendored_libraries = 'imoyao/Classes/*.a'
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
+  s.vendored_frameworks = 'imoyao/Classes/*.framework'
   s.requires_arc = true
   s.dependency 'BabyBluetooth', '~> 0.7.0'
   # s.resource_bundles = {

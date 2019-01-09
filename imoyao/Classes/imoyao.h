@@ -6,14 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ESPTouchTask.h"
-#import "ESP_NetUtil.h"
-#import "ESPTouchDelegate.h"
-#import "ESPAES.h"
-#import "ESPTouchResult.h"
-#import <SystemConfiguration/CaptiveNetwork.h>
 
-typedef void(^espBlock)(ESPTouchResult *result);
+typedef void(^espBlock)(BOOL isSucc, NSString *result);
 
 @interface imoyao : NSObject
 

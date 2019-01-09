@@ -9,17 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "ESPTouchResult.h"
 #import "ESPTouchDelegate.h"
-#import "ESPAES.h"
-
-#define ESPTOUCH_VERSION    @"v0.3.7.0"
 
 #define DEBUG_ON   YES
 
 @interface ESPTouchTask : NSObject
 
 @property (atomic,assign) BOOL isCancelled;
-
-- (id)initWithApSsid:(NSString *)apSsid andApBssid:(NSString *)apBssid andApPwd:(NSString *)apPwd andAES:(ESPAES *)aes;
 
 /**
  * Constructor of EsptouchTask
@@ -115,9 +110,4 @@
  */
 - (void) setEsptouchDelegate: (NSObject<ESPTouchDelegate> *) esptouchDelegate;
 
-/**
- * Set boradcast or multicast when post config info
- * @param broadcast YES is boradcast, NO is multicast
- */
-- (void) setPackageBroadcast: (BOOL) broadcast;
 @end

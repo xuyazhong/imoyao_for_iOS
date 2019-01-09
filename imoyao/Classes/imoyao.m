@@ -6,8 +6,11 @@
 //
 
 #import "imoyao.h"
+#import "ESP_Helper.h"
+#import "ESP_NetUtil.h"
+#import <SystemConfiguration/CaptiveNetwork.h>
 
-@interface imoyao()<ESPTouchDelegate>
+@interface imoyao()
 
 @end
 
@@ -34,37 +37,29 @@ static imoyao *_shared = nil;
 
 - (void)Connect:(NSString *)passwd block:(espBlock)block {
     _block = block;
-    NSString *ssid = [self getSSID];
-    NSString *bssid = [self getBSSID];
-    int taskCount = 1;
-    BOOL broadcast = YES;
+//    NSString *ssid = [self getSSID];
+//    NSString *bssid = [self getBSSID];
     
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        NSArray *esptouchResultArray = [self executeForResultsWithSsid:ssid bssid:bssid password:passwd taskCount:taskCount broadcast:broadcast];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            ESPTouchResult *firstResult = [esptouchResultArray objectAtIndex:0];
-//            NSLog(@"esptouchResultArray =>[%@]", firstResult);
-            _block(firstResult);
-        });
-    });
-}
-
-#pragma mark - the example of how to use executeForResults
-- (NSArray *)executeForResultsWithSsid:(NSString *)apSsid bssid:(NSString *)apBssid password:(NSString *)apPwd taskCount:(int)taskCount broadcast:(BOOL)broadcast {
-    ESPTouchTask *esptouchTask = [[ESPTouchTask alloc]initWithApSsid:apSsid andApBssid:apBssid andApPwd:apPwd];
-    [esptouchTask setEsptouchDelegate:self];
-    [esptouchTask setPackageBroadcast:broadcast];
-    NSArray *esptouchResults = [esptouchTask executeForResults:taskCount];
-    return esptouchResults;
-}
-
-#pragma mark - delegate
-- (void)onEsptouchResultAddedWithResult:(ESPTouchResult *) result {
-    NSLog(@"EspTouchDelegateImpl onEsptouchResultAddedWithResult bssid: %@", result.bssid);
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        _block(result);
-//    });
+    [ESP_Helper start:passwd callback:^(ESPTouchResult *result) {
+        
+        if (!result.isCancelled) {
+            
+            if (result.isSuc) {
+                NSString *ipAddrDataStr = [ESP_NetUtil descriptionInetAddr4ByData:result.ipAddrData];
+                if (ipAddrDataStr==nil) {
+                    ipAddrDataStr = [ESP_NetUtil descriptionInetAddr6ByData:result.ipAddrData];
+                }
+                NSLog(@"ip :%@ description:%@", ipAddrDataStr, result);
+                _block(YES, ipAddrDataStr);
+            } else {
+                _block(NO, @"error");
+            }
+            
+        } else {
+            _block(NO, @"cancel");
+        }
+        
+    }];
 }
 
 #pragma mark - custom
