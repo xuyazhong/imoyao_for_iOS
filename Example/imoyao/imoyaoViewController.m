@@ -8,7 +8,6 @@
 
 #import "imoyaoViewController.h"
 #import <imoyao/imoyao.h>
-#import <imoyao/ESPTouchResult.h>
 
 @interface imoyaoViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *ssidLbl;
@@ -35,16 +34,12 @@
         return;
     }
     
-    [[imoyao sharedMoyao] Connect:self.passwdTF.text block:^(ESPTouchResult *result) {
-        if (!result.isCancelled) {
-            if (result.isSuc) {
-                NSString *ipAdd = [NSString stringWithFormat:@"ip =>[%@]", result.ipAddrData];
-                [self alert:@"Execute Result success" message:ipAdd];
-            } else {
-                [self alert:@"Execute Result failure" message:@"Esptouch fail"];
-            }
+    [[imoyao sharedMoyao] Connect:self.passwdTF.text block:^(BOOL isSucc, NSString *result) {
+        if (isSucc) {
+            NSString *ipAdd = [NSString stringWithFormat:@"ip =>[%@]", result];
+            [self alert:@"Execute Result success" message:ipAdd];
         } else {
-            [self alert:@"error" message:@"Esptouch fail"];
+            [self alert:@"Execute Result failure" message:result];
         }
     }];
 }

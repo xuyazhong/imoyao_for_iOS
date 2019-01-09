@@ -1,6 +1,6 @@
 platform :ios, '10.0'
 
 target 'imoyao_Example' do
-  pod 'imoyao', :git => 'git@github.com:xuyazhong/imoyao_for_iOS.git'
-#  pod 'imoyao', :path => '../'
+#  pod 'imoyao', :git => 'git@github.com:xuyazhong/imoyao_for_iOS.git'
+  pod 'imoyao', :path => '../'
 end

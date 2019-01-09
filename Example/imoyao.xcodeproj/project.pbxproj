@@ -21,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		33DB8416BB7F42C935AD30F9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		382CB64FA0DE9CF6A8B6C2D5 /* Pods-imoyao_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imoyao_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-imoyao_Example/Pods-imoyao_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* imoyao_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imoyao_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -39,11 +38,9 @@
 		6D63A791DDC9C3E8D3D02FAB /* Pods-imoyao_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imoyao_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-imoyao_Tests/Pods-imoyao_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77FE52323F844CF678B35E82 /* libPods-imoyao_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imoyao_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AD5BF1C559A687C6941B681 /* imoyao.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = imoyao.podspec; path = ../imoyao.podspec; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D04AB7FF7E12ACD35795089D /* Pods-imoyao_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imoyao_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imoyao_Example/Pods-imoyao_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D1182D58A64FD68A4C8AC161 /* Pods-imoyao_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imoyao_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imoyao_Tests/Pods-imoyao_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D35BAE67712E44D58DDE84F5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +61,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for imoyao */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
@@ -116,16 +112,6 @@
 				6003F59B195388D20070C39A /* imoyao-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
-			isa = PBXGroup;
-			children = (
-				7AD5BF1C559A687C6941B681 /* imoyao.podspec */,
-				33DB8416BB7F42C935AD30F9 /* README.md */,
-				D35BAE67712E44D58DDE84F5 /* LICENSE */,
-			);
-			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 		88988962D9FBD572254F283E /* Pods */ = {
