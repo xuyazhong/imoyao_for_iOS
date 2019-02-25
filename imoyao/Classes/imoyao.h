@@ -22,4 +22,6 @@ typedef void(^espBlock)(BOOL isSucc, NSString *result);
 // 传入无线密码配网
 - (void)Connect:(NSString *)passwd block:(espBlock)block;
 
+- (NSString *)crc:(NSString *)text;
+
 @end

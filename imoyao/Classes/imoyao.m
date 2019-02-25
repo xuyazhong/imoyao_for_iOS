@@ -9,6 +9,7 @@
 #import "ESP_Helper.h"
 #import "ESP_NetUtil.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
+#import "NSString+CRC.h"
 
 @interface imoyao()
 
@@ -33,6 +34,10 @@ static imoyao *_shared = nil;
 
 - (NSString *)getBSSID {
     return [self fetchBssid];
+}
+
+- (NSString *)crc:(NSString *)text {
+    return [text CRC_CCITT];
 }
 
 - (void)Connect:(NSString *)passwd block:(espBlock)block {
