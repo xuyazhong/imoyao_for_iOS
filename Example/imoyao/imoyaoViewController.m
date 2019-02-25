@@ -24,6 +24,8 @@
     NSString *bssid = [[imoyao sharedMoyao] getBSSID];
     self.ssidLbl.text = [NSString stringWithFormat:@"ssid: [%@]\nbssid: [%@]", ssid, bssid];
     
+    NSLog(@"ABCD => [%@]", [[imoyao sharedMoyao] crc:@"ABCD"]);
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
