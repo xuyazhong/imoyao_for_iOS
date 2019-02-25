@@ -12,7 +12,7 @@ pod 'imoyao', :git => 'git@github.com:xuyazhong/imoyao_for_iOS.git'
 
 运行 pod install
 
-###用法
+## 用法
 
 ```
 #import <imoyao/imoyao.h>
